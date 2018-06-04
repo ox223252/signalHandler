@@ -1,10 +1,38 @@
 #ifndef __SIGNALHANDLER_H__
 #define __SIGNALHANDLER_H__
 
+////////////////////////////////////////////////////////////////////////////////
+/// \copiright ox223252, 2017
+///
+/// This program is free software: you can redistribute it and/or modify it
+///     under the terms of the GNU General Public License published by the Free
+///     Software Foundation, either version 2 of the License, or (at your
+///     option) any later version.
+///
+/// This program is distributed in the hope that it will be useful, but WITHOUT
+///     ANY WARRANTY; without even the implied of MERCHANTABILITY or FITNESS FOR
+///     A PARTICULAR PURPOSE. See the GNU General Public License for more
+///     details.
+///
+/// You should have received a copy of the GNU General Public License along with
+///     this program. If not, see <http://www.gnu.org/licenses/>
+////////////////////////////////////////////////////////////////////////////////
+
 #include <stdio.h>
 #include <signal.h>
 #include <unistd.h>
 #include <stdint.h>
+
+////////////////////////////////////////////////////////////////////////////////
+/// \file signalManager.h
+/// \brief library to maage signals
+/// \author ox223252
+/// \date 2018-06
+/// \version 0.1
+/// \copyrigth GPLv2
+/// \warning NONE
+/// \bug NONE
+////////////////////////////////////////////////////////////////////////////////
 
 // SIGKILL : kill -9
 // SIGTERM : kill

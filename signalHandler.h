@@ -53,7 +53,8 @@ typedef struct
 		Cont:1,
 		Usr1:1,
 		Usr2:1,
-		Alrm:1;
+		Alrm:1
+		Fault:1;
 }
 signalFlag;
 
@@ -75,7 +76,8 @@ typedef struct
 	signalArgs Cont;
 	signalArgs Usr1;
 	signalArgs Usr2;
-	signalArgs Alrm;
+	signalArgs Alrm
+	signalArgs Fault;
 }
 signalHandling;
 

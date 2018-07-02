@@ -110,6 +110,14 @@ static void catchSignals(int sig)
 			}
 			break;
 		}
+		case SIGSEGV:
+		{
+			if ( lg_ptr && lg_ptr->Fault.func )
+			{
+				lg_ptr->Fault.func ( lg_ptr->Fault.arg );
+			}
+			break;
+		}
 		default:
 		{
 			// TODO: should all other signals be catched, and handled as SIGINT?
@@ -164,6 +172,10 @@ void signalHandlerInit ( signalHandling *ptr )
 	if ( ptr->flag.Alrm )
 	{
 		signal ( SIGALRM, catchSignals );
+	}
+	if ( ptr->flag.Fault )
+	{
+		signal ( SIGSEGV, catchSignals );
 	}
 }
 

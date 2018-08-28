@@ -1,0 +1,40 @@
+@ after INIT_FUNCTION
+void functionExit ( void * arg )
+{
+
+	printf ( \"%s\\n\", ( char * )arg );
+
+	exit ( 0 );
+}
+
+@ after INIT_VAR
+	signalHandling signal =
+	{
+		.flag =
+		{
+			.Int = 1,
+			.Quit = 1,
+			.Term = 1
+		},
+		.Int =
+		{
+			.func = functionExit,
+			.arg = \"Int case\\n\"
+		},
+		.Quit =
+		{
+			.func = functionExit,
+			.arg = \"Quit case\\n\"
+		},
+		.Term =
+		{
+			.func = functionExit,
+			.arg = \"Term case\\n\"
+		}
+	};
+
+@ after INIT_CORE
+	// INIT_SIGNALHANDLER
+	signalHandlerInit ( &signal );
+	// END_SIGNALHANDLER
+	
